@@ -38,6 +38,8 @@ public WebDriver setup(String browser){
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     driver.get(prop.getProperty("siteurl"));
+    PageDriver.getInstance().setWebdriver(driver);
+
     return driver;
 }
 }
