@@ -1,4 +1,5 @@
 Feature: Sign up Feature
+
   Scenario: First User Registration
     Given Go to sign up page
     When "1st" user filled every inputs
@@ -17,4 +18,4 @@ Feature: Sign up Feature
   Scenario: Fourth User Registration
     Given Go to sign up page
     When "4th" user filled every inputs
-    Then Registration is successfull
+    Then Registration is successful
