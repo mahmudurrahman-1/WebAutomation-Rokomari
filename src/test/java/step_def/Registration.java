@@ -20,5 +20,10 @@ public class Registration {
     public void gotosignup(){
         homepage.ClickSignup();
     }
-    @When("^\"1st\" user filled every inputs$")
+    @When("^\"([^\"]*)\" user filled every inputs$")
+    public void signupprocess(String user){
+        String name,email,phone,password;
+        // let go with if else statement for different user activity
+
+    }
 }
