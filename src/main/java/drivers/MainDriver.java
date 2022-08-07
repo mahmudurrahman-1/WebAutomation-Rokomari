@@ -13,35 +13,33 @@ import java.util.Properties;
 
 public class MainDriver {
     //set WebDriver Variable driver is null
-public WebDriver driver =null;
-//Parsing data using dataparser's loadproperties method by passing file name as argument
-Properties prop = DataParser.loadProperties("driver.properties");
-public WebDriver setup(String browser){
-    if(browser.contains("chrome")){
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+    public WebDriver driver = null;
+    //Parsing data using dataparser's loadproperties method by passing file name as argument
+    Properties prop = DataParser.loadProperties("driver.properties");
 
-    }
-   else if(browser.contains("firefox")){
-        WebDriverManager.firefoxdriver().setup();
-        driver=new FirefoxDriver();
+    public WebDriver setup(String browser) {
+        if (browser.contains("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
 
-    }
-    else if(browser.contains("opera")){
-        WebDriverManager.operadriver().setup();
-        driver=new OperaDriver();
+        } else if (browser.contains("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
 
-    }
-    else {
-        WebDriverManager.edgedriver().setup();
-        driver=new EdgeDriver();
-    }
-    // driver manages necessary things
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    driver.get(prop.getProperty("siteurl"));
-    PageDriver.getInstance().setWebdriver(driver);
+        } else if (browser.contains("opera")) {
+            WebDriverManager.operadriver().setup();
+            driver = new OperaDriver();
 
-    return driver;
-}
+        } else {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
+        // driver manages necessary things
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get(prop.getProperty("siteurl"));
+        PageDriver.getInstance().setWebdriver(driver);
+
+        return driver;
+    }
 }
