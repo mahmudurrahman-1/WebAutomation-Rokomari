@@ -46,7 +46,7 @@ public class Common {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    public static void waitForPageLoad() {
+    public void waitForPageLoad() {
         WebDriverWait wait = new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(30));
         wait.until((ExpectedCondition<Boolean>) wd -> {
             assert wd != null;
