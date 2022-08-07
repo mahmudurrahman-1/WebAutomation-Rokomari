@@ -12,7 +12,9 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class MainDriver {
+    //set WebDriver Variable driver is null
 public WebDriver driver =null;
+//Parsing data using dataparser's loadproperties method by passing file name as argument
 Properties prop = DataParser.loadProperties("driver.properties");
 public WebDriver setup(String browser){
     if(browser.contains("chrome")){
