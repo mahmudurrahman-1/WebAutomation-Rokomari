@@ -8,29 +8,30 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Common;
 
 public class Sign_in extends Common {
-    public Sign_in(){
-        PageFactory.initElements(PageDriver.getCurrentDriver(),this);
+    public Sign_in() {
+        PageFactory.initElements(PageDriver.getCurrentDriver(), this);
     }
 
     /***************
      * Identifiers
      */
-    @FindBy(id="j_username")
+    @FindBy(id = "j_username")
     public WebElement username;
-    @FindBy(id="j_password")
+    @FindBy(id = "j_password")
     public WebElement password;
-    @FindBy(xpath="//button[normalize-space()='Sign In']")
+    @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement submitsigninbtn;
 
     /***************
      * Actions
      */
 
-    public void HandleSignin(String name,String pass){
-    sendText(username,name);
-    sendText(password,pass);
+    public void HandleSignin(String name, String pass) {
+        sendText(username, name);
+        sendText(password, pass);
     }
-    public void SubmitSignin(){
+
+    public void SubmitSignin() {
         submitsigninbtn.click();
     }
 }
