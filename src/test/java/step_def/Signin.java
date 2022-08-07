@@ -32,6 +32,7 @@ public class Signin {
     public void SigninProcess(String email, String pass) throws InterruptedException {
         signinpage.HandleSignin(email, pass);
         signinpage.SubmitSignin();
+        //if verfication is required then
         boolean verifybutton = activepage.verifybtnSize() > 0;
         if (verifybutton) {
             activepage.clickVerifybutton();
