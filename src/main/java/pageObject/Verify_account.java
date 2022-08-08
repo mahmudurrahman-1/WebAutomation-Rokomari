@@ -9,9 +9,10 @@ import utilities.Common;
 import java.util.List;
 
 public class Verify_account extends Common {
-    public Verify_account(){
-        PageFactory.initElements(PageDriver.getCurrentDriver(),this);
+    public Verify_account() {
+        PageFactory.initElements(PageDriver.getCurrentDriver(), this);
     }
+
     /*************
      * Identifiers
      */
@@ -29,9 +30,10 @@ public class Verify_account extends Common {
     public void clickVerifybutton() {
         verifyButton.click();
     }
-public int verifybtnSize(){
-     return   verifyButtonSize.size();
-}
+
+    public int verifybtnSize() {
+        return verifyButtonSize.size();
+    }
 
     public void clickConfirm() {
         confirmButton.click();
