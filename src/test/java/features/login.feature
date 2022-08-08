@@ -7,4 +7,4 @@ Feature: Log in feature
 
     Examples:
       | email                        | password     |
-      | mujibur.rahman.sqa@gmail.com | mujibur@0000 |
+      | tabiur.rahman.sqa@gmail.com | tabiur@0000 |
