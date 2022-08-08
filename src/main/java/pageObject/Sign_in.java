@@ -15,6 +15,9 @@ public class Sign_in extends Common {
     /***************
      * Identifiers
      */
+    /****************
+     * login in
+     */
     @FindBy(id = "j_username")
     public WebElement username;
     @FindBy(id = "j_password")
@@ -22,16 +25,47 @@ public class Sign_in extends Common {
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement submitsigninbtn;
 
+    /************
+     * Reset password
+     */
+
+    @FindBy(css="a[class='forget-password-link']")
+    WebElement forgotPassbtn;
+    @FindBy(css="input[name='email_phone']")
+    WebElement inputphoneoremail;
+    @FindBy(css="input[name='password']")
+    WebElement enternewpass;
+    @FindBy(css="button[type='submit']")
+    WebElement resetbtn;
     /***************
      * Actions
      */
-
+    /************
+     * Sign in
+     */
+    // Sign in handler
     public void HandleSignin(String name, String pass) {
         sendText(username, name);
         sendText(password, pass);
     }
+    //submit sign in button
 
     public void SubmitSignin() {
         submitsigninbtn.click();
+    }
+
+    /************
+     * Forget pass
+     */
+    public void clickResetbtn(){
+        forgotPassbtn.click();
+    }
+    public void HandleResetPass(String phoneoremail){
+        sendText(inputphoneoremail,phoneoremail);
+        resetbtn.click();
+    }
+    public void HandlenewPass(String newpass){
+        sendText(enternewpass,newpass);
+        resetbtn.click();
     }
 }
