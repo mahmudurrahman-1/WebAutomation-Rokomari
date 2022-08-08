@@ -32,7 +32,7 @@ public class ForgotPass {
         phoneoremail = props.getProperty("up");
         newpass = props.getProperty("upa");
         signin.HandleResetPass(phoneoremail);
-        Thread.sleep(15000);
+        Thread.sleep(25000);
         signin.verifysbtbtn();
         signin.HandlenewPass(newpass);
     }
