@@ -6,5 +6,5 @@ Feature: Log in feature
     Then Welcome to your profile
 
     Examples:
-      | email                        | password     |
-      | tabiur.rahman.sqa@gmail.com | tabiur@0000 |
+      | email                         | password      |
+      | mahmudur.rahman.sqa@gmail.com | mahmudur@0000 |
