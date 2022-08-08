@@ -35,8 +35,12 @@ public class Sign_in extends Common {
     WebElement inputphoneoremail;
     @FindBy(css="input[name='password']")
     WebElement enternewpass;
-    @FindBy(css="button[type='submit']")
-    WebElement resetbtn;
+    @FindBy(xpath="//button[normalize-space()='Send Recovery Code']")
+    WebElement srcbtn;
+    @FindBy(xpath="//button[normalize-space()='Submit']")
+    WebElement verifysubmitbtn;
+    @FindBy(xpath="//button[normalize-space()='Reset Password']")
+    WebElement rpsubmitbtn;
     /***************
      * Actions
      */
@@ -60,12 +64,15 @@ public class Sign_in extends Common {
     public void clickResetbtn(){
         forgotPassbtn.click();
     }
+    public void verifysbtbtn(){
+        verifysubmitbtn.click();
+    }
     public void HandleResetPass(String phoneoremail){
         sendText(inputphoneoremail,phoneoremail);
-        resetbtn.click();
+        srcbtn.click();
     }
     public void HandlenewPass(String newpass){
         sendText(enternewpass,newpass);
-        resetbtn.click();
+        rpsubmitbtn.click();
     }
 }
